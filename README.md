@@ -8,46 +8,67 @@ Note: We don't expect you to have all the skills committed to memory right now. 
 
 Good luck!
 
+# Channel Subscription Application
 
-## Objectives
+By now you should be familiar with creating basic web applications using Sinatra. In this challenge you'll be building a simple channel subscription application for subscribers of a cable company. This will give you a chance to demonstrate your proficiency with the web by writing code for models, views, and controllers as well as authentication, basic HTML, and some CSS.
 
-For this challenge, you'll be adding some new functionality to a very basic Sinatra+ActiveRecord application. The application in its current form includes:
+The problem is broken into multiple parts. You should complete each part before moving on to the next. It is highly encouraged that you check in with your instructor after completing each part.
 
-- a `User` model (along with sign-in and sign-up functionality)
-- a `Skill` model (representing a skill that a user might have)
+We've given approximate timeboxes for each part to help you make good progress. If you find you are taking longer be sure to ask questions.
 
-Your task is to add the notion of "proficiency" to the application. A user can have many skills, and a skill can belong to many users. A "proficiency" is an association between `User`s and `Skill`s, and has the following additional *required* attributes:
+### Release 1: Authentication (Timing ~ 45 min)
 
-- years of experience
-- a flag tracking whether or not the user has formal education for the given skill
+Authentication is a central concern of most web applications. We're going to start by creating a simple app that does nothing more than authenticate a user.
 
-You'll need to provide an interface in the application for users to select the skills that they have. How you choose to provide this interface is up to you, but a user should only be able to edit her own skills, not the skills of other users.
+#### User Model
 
-Also, the home page of your application should simply show each user, along with each of her skills, how many years experience she has with said skill, and whether or not she's been formally educated in that skill. For example:
+You have an empty `User` model and a database with a `users` table. Add validations to the `User` model which guarantee the following:
 
-<table>
-  <tr>
-    <th>Name</th><th>Skill</th><th>Years</th><th>Formal?</th>
-  </tr>
-  <tr class="new-user">
-    <td>Marie Curie</td><td>Ruby (technical)</td><td>1</td><td>yes</td>
-  </tr>
-  <tr>
-    <td></td><td>JavaScript (technical)</td><td>2</td><td>yes</td>
-  </tr>
-  <tr class="new-user">
-    <td>Max Born</td><td>Illustrator (creative)</td><td>5</td><td>no</td>
-  </tr>
-  <tr>
-    <td></td><td>CSS (technical)</td><td>3</td><td>no</td>
-  </tr>
-</table>
+1. Every user has an email
+2. Every user's email is unique
+3. Every user has a password
 
-## Important
-**Please run `rake db:drop` before you begin to flush any old databases**
+You should not store the user's password directly in the database.
 
-## Useful Notes / Tidbits
+#### Sign Up, Log In, Log Out
 
-- What's the [right kind of association](http://guides.rubyonrails.org/association_basics.html#the-has_many-through-association) between `User` and `Skill`?
-- Validations on boolean fields [can be tricky](http://stackoverflow.com/questions/10506575/rails-database-defaults-and-model-validation-for-boolean-fields).
-- Before implementing a manual way to add new proficiencies for a user, you might try adding some through your `seeds.rb` file.
+Create views to allow a user to:
+
+1. Sign up as a new user
+2. Log in as an existing user
+3. Log out as an existing user
+
+### Release 2: Channels  (Timing ~ 30 min)
+
+Users can add and remove channels from their user account. Users can subscribe to many channels and a channel can have many subscribers. Channels are created for you in the database seeds.
+
+#### Associations
+
+We've already defined the three models for you. You'll need to create the associations between them.
+
+The `User` model should have at least this one association (among others):
+
+- `user.channels` should return the list of `Channel` models subscribed to by the user.
+
+The `Channel` model should have at least this association (among others):
+
+- `channel.subscribers` should return the list of `User` models subscribed to the channel.
+
+**Note**: Before you move on, be sure your associations are working as expected. Try using `rake console` to manually test them.
+
+### Release 3: CRUD It Up (Timing ~ 60 min)
+
+With user authentication in place, let's create some CRUD pages.
+
+1. without logging in, a user can see a list of all channels
+2. after logging in, a user can see a user profile page including:
+  * a list of the user's channels
+  * the total price per month of all the user's channels
+  * fyi - after logging in, this is the page a user should be on
+3. a page to show information about a single channel including:
+  * a count of the total number of subscribers
+  * a link to add the channel (if the user does not already subscribe to this channel)
+  * a link to remove the channel (if the user already subscribes to this channel)
+  * the channel's price
+
+Done? Check in with an instructor to make sure that your solution meets the objectives of the challenge.
