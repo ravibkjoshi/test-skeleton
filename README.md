@@ -12,9 +12,7 @@ Good luck!
 
 By now you should be familiar with creating basic web applications using Sinatra. In this challenge you'll be building a simple channel subscription application for subscribers of a cable company. This will give you a chance to demonstrate your proficiency with the web by writing code for models, views, and controllers as well as authentication, basic HTML, and some CSS.
 
-The problem is broken into multiple parts. You should complete each part before moving on to the next. It is highly encouraged that you check in with your instructor after completing each part.
-
-We've given approximate timeboxes for each part to help you make good progress. If you find you are taking longer be sure to ask questions.
+The problem is broken into multiple parts. You should complete each part before moving on to the next. We've given approximate timeboxes for each part to help you make good progress. 
 
 ### Release 1: Authentication (Timing ~ 60 min)
 
