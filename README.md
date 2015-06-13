@@ -16,7 +16,7 @@ The problem is broken into multiple parts. You should complete each part before 
 
 We've given approximate timeboxes for each part to help you make good progress. If you find you are taking longer be sure to ask questions.
 
-### Release 1: Authentication (Timing ~ 45 min)
+### Release 1: Authentication (Timing ~ 60 min)
 
 Authentication is a central concern of most web applications. We're going to start by creating a simple app that does nothing more than authenticate a user.
 
@@ -56,7 +56,7 @@ The `Channel` model should have at least this association (among others):
 
 **Note**: Before you move on, be sure your associations are working as expected. Try using `rake console` to manually test them.
 
-### Release 3: CRUD It Up (Timing ~ 60 min)
+### Release 3: CRUD It Up (Timing ~ 90 min)
 
 With user authentication in place, let's create some CRUD pages.
 
@@ -71,4 +71,4 @@ With user authentication in place, let's create some CRUD pages.
   * a link to remove the channel (if the user already subscribes to this channel)
   * the channel's price
 
-Done? Check in with an instructor to make sure that your solution meets the objectives of the challenge.
+After three hours create a pull request and tag your instructors. Feel free to continue working on this challenge, but be sure to mark where you are after three hours.
