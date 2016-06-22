@@ -65,8 +65,8 @@ With user authentication in place, let's create some CRUD pages.
   * fyi - after logging in, this is the page a user should be on
 3. a page to show information about a single channel including:
   * a count of the total number of subscribers
-  * a link to add the channel (if the user does not already subscribe to this channel)
-  * a link to remove the channel (if the user already subscribes to this channel)
+  * a button to subscribe to the channel (if the user is not already subscribed)
+  * a button to unsubscribe from the channel (if the user is already subscribed)
   * the channel's price
 
 After three hours create a pull request and tag your instructors. Feel free to continue working on this challenge, but be sure to mark where you are after three hours.
