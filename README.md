@@ -64,9 +64,9 @@ With user authentication in place, let's create some CRUD pages.
   * the total price per month of all the user's channels
   * fyi - after logging in, this is the page a user should be on
 3. a page to show information about a single channel including:
-  * a count of the total number of subscribers
-  * a button to subscribe to the channel (if the user is not already subscribed)
-  * a button to unsubscribe from the channel (if the user is already subscribed)
-  * the channel's price
+  * the channel's name, callsign, and price
+  * the channel's total number of subscribers
+  * a button to subscribe to the channel, if the user is logged in but not already subscribed
+  * a button to unsubscribe from the channel, if the user is logged in and already subscribed
 
 After three hours create a pull request and tag your instructors. Feel free to continue working on this challenge, but be sure to mark where you are after three hours.
