@@ -5,7 +5,7 @@ end
 
 
 post '/sessions' do
- @user = User.find_by(email: params[:user][:password])
+ @user = User.find_by(email: params[:user][:email])
 
 	if @user.try(params[:user][:password])
 		login(@user)
