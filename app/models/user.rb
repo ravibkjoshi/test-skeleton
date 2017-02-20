@@ -12,5 +12,9 @@ validates :email, uniqueness: true
     @password = Password.create(new_password)
     self.hashed_password = @password
   end 
+
+  def try(valid_password)
+  	self.password == valid_password
+  end 
   # Remember to create a migration!
 end
