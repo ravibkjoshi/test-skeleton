@@ -13,7 +13,7 @@ validates :email, uniqueness: true
     self.hashed_password = @password
   end 
 
-  def try(valid_password)
+  def authenticate(valid_password)
   	self.password == valid_password
   end 
   # Remember to create a migration!

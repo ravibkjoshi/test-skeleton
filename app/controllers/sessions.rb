@@ -7,7 +7,7 @@ end
 post '/sessions' do
  @user = User.find_by(email: params[:user][:email])
 
-	if @user.try(params[:user][:password])
+	if @user.authenticate(params[:user][:password])
 		login(@user)
 		redirect "/users/#{@user.id}"
 	else 
