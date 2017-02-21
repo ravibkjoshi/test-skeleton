@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 include BCrypt
-
+ has_many :subscriptions
 validates :email, :password, presence: true
 validates :email, uniqueness: true 
 

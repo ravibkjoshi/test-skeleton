@@ -1,20 +1,46 @@
 <div class="container">
  <center> <h1>Welcome to the Channel Subscription Service!</h1> </center>
-  
+
   <ul>
-  <li> <a href="/users/new">Sign Up</a> </li>
-  <li> <a href='/login' >Login</a> </li>
- 
-  
-</ul>
+    <li> <a href="/users/new">Sign Up</a> </li>
+    <li> <a href='/login' >Login</a> </li>
+  </ul>
 
 
 
-<ul>
-  
+    <center>
+      <p>Available Channels: </p>
+
+      
+      <div>
+
+        <table border="3">
+        <tr>
+          <th>
+            Channel Name
+          </th>
+          <th>
+            Call Sign
+          </th>
+        </tr>
+        <%@channels.each do |channel| %>
+          <tr>
+            <td>
+              <a href="/channel/<%=channel.id%>"> <%= channel.name %> </a>
+            </td>
+            
+            <td>
+              <%= channel.callsign %>
+            </td>
+          </tr>
+          <% end %>
+        </table>
 
 
+      </div>
+      
 
-  
-</ul>
+    </center>
+
+
 </div>
