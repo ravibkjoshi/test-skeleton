@@ -15,7 +15,7 @@ gem 'rake'
 gem 'bcrypt-ruby'
 
 gem 'shotgun'
-
+gem 'hirb'
 group :development, :test do
   gem 'faker'
   gem 'rspec'

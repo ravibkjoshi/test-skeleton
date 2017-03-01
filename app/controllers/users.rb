@@ -17,8 +17,13 @@ end
 
 
 get '/users/:id' do
-@user = user.find(params[:id])
-erb :'users/profile'
+	if current_user
+		@user = User.find(params[:id])
+		erb :'users/profile'
+	else 
+		redirect '/'
+	end
+
 end 
 
 #log out
